@@ -1,22 +1,27 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ShylynPerfumeAPI.Data;
+﻿using ShylynPerfumeAPI.Data.Infrastructure.Core;
 using ShylynPerfumeAPI.Models;
+using ShylynPerfumeAPI.Services.InterfaceServices;
 
-namespace ShylynPerfumeAPI.Services.CategorySevice
+namespace ShylynPerfumeAPI.Services.ImpServices
 {
-    public class CategoryService : ICategoryService
+    public class UserService : IUserService
     {
-       
-        private readonly DataContext _context;
 
-        public CategoryService(DataContext context)
+        private readonly CoreDataContext _context;
+
+        public UserService(CoreDataContext context)
         {
             _context = context;
         }
 
-        public async Task<List<Category>> GetAllCategories()
+        public async Task<List<Category>> Authenticate(User user)
         {
-            var categories = await _context.Categories.ToListAsync();
+            if(user is null)
+            {
+                return null;
+            }
+
+            var userItem = await _context.Users.GetQuery
             return categories;
         }
 
@@ -54,7 +59,7 @@ namespace ShylynPerfumeAPI.Services.CategorySevice
             var category = await _context.Categories.FindAsync(id);
             if (category is null)
                 return null;
-            
+
             _context.Categories.Remove(category);
             await _context.SaveChangesAsync();
             return await _context.Categories.ToListAsync();

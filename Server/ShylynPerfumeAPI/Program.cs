@@ -1,5 +1,7 @@
-using ShylynPerfumeAPI.Data;
-using ShylynPerfumeAPI.Services.CategorySevice;
+using Microsoft.EntityFrameworkCore;
+using ShylynPerfumeAPI.Data.Infrastructure.Core;
+using ShylynPerfumeAPI.Services.ImpServices;
+using ShylynPerfumeAPI.Services.InterfaceServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +11,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<CoreDataContext>(option =>
+{
+    option.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection"));
+});
 builder.Services.AddScoped<ICategoryService, CategoryService>();
-builder.Services.AddDbContext<DataContext>();
 
 var app = builder.Build();
 

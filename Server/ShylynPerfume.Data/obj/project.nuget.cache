@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "JCesFlvFaIDDxaYoWZpAjj0FtyuPDQhTlHU3B5Ou58sJiSPzEYSI7si8JMQQdO6Zvn54hj0U0r5/0TQqHao5vw==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\Training\\ShylynPerfume\\Server\\ShylynPerfume.Data\\ShylynPerfume.Data.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\NC\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.9\\microsoft.entityframeworkcore.abstractions.7.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}

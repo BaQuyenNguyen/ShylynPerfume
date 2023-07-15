@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShylynPerfumeAPI.Models;
-using ShylynPerfumeAPI.Services.CategorySevice;
+using ShylynPerfumeAPI.Services.InterfaceServices;
 
 namespace ShylynPerfumeAPI.Controllers
 {

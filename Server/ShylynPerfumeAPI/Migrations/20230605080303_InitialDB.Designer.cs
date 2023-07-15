@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ShylynPerfumeAPI.Data;
+using ShylynPerfumeAPI.Data.Infrastructure.Core;
 
 #nullable disable
 
 namespace ShylynPerfumeAPI.Migrations
 {
-    [DbContext(typeof(DataContext))]
+    [DbContext(typeof(CoreDataContext))]
     [Migration("20230605080303_InitialDB")]
     partial class InitialDB
     {

@@ -1,8 +1,8 @@
 ﻿using ShylynPerfumeAPI.Models;
 
-namespace ShylynPerfumeAPI.Services.CategorySevice
+namespace ShylynPerfumeAPI.Services.InterfaceServices
 {
-    public interface ICategoryService
+    public interface IUserService
     {
         Task<List<Category>> GetAllCategories();
         Task<Category> GetSingleCategory(Guid id);
